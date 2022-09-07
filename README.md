@@ -37,7 +37,7 @@ Wrap a Docker image with enablement for MySQL database
         IFS=";" read -r -a BASE_IMAGE_DATA <<< "${BASE_IMAGE}"
         BASE_IMAGE_NAME="${BASE_IMAGE_DATA[0]}"
         BASE_IMAGE_VERSION_VARIABLE="${BASE_IMAGE_DATA[1]}"
-        echo docker build \
+        docker build \
             --build-arg BASE_IMAGE=${BASE_IMAGE_NAME}:${!BASE_IMAGE_VERSION_VARIABLE} \
             --tag ${BASE_IMAGE_NAME}-mysql:${!BASE_IMAGE_VERSION_VARIABLE} \
             https://github.com/Senzing/docker-wrap-image-with-mysql.git#issue-3.dockter.1
