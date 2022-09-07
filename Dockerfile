@@ -7,6 +7,8 @@ LABEL Name="senzing/wrap-with-mysql" \
       Maintainer="support@senzing.com" \
       Version="1.0.0"
 
+USER root
+
 # Install packages via apt-get.
 
 RUN apt-get update \
@@ -29,3 +31,6 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-ODBC/8.0/mysql-connector-
       ./mysql-common_8.0.20-1debian10_amd64.deb \
       ./libmysqlclient21_8.0.20-1debian10_amd64.deb \
  && rm -rf /var/lib/apt/lists/*
+
+ARG FINAL_USER=1005
+USER ${FINAL_USER}
