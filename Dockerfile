@@ -5,39 +5,27 @@ ENV REFRESHED_AT=2022-08-25
 
 LABEL Name="senzing/wrap-with-mysql" \
       Maintainer="support@senzing.com" \
-      Version="1.3.2"
+      Version="1.0.0"
 
-HEALTHCHECK CMD ["/app/healthcheck.sh"]
-
-# Run as "root" for system installation.
-
-USER root
+# Install packages via apt-get.
 
 RUN apt-get update \
  && apt-get -y install \
-      python3 \
-      python3-pip \
- && apt-get clean \
+      wget \
  && rm -rf /var/lib/apt/lists/*
 
-# Install packages via PIP.
+# MySQL support
 
-COPY requirements.txt ./
-RUN pip3 install --upgrade pip \
- && pip3 install -r requirements.txt \
- && rm requirements.txt
-
-# Install packages via apt.
-
-# Copy files from repository.
-
-COPY ./rootfs /
-
-# Make non-root container.
-
-USER 1001
-
-# Runtime execution.
-
-WORKDIR /app
-CMD ["/app/sleep-infinity.sh"]
+RUN wget https://dev.mysql.com/get/Downloads/Connector-ODBC/8.0/mysql-connector-odbc_8.0.20-1debian10_amd64.deb \
+ && wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-common_8.0.20-1debian10_amd64.deb \
+ && wget http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/libmysqlclient21_8.0.20-1debian10_amd64.deb \
+ && apt-get update \
+ && apt-get -y install \
+      ./mysql-connector-odbc_8.0.20-1debian10_amd64.deb \
+      ./mysql-common_8.0.20-1debian10_amd64.deb \
+      ./libmysqlclient21_8.0.20-1debian10_amd64.deb \
+ && rm \
+      ./mysql-connector-odbc_8.0.20-1debian10_amd64.deb \
+      ./mysql-common_8.0.20-1debian10_amd64.deb \
+      ./libmysqlclient21_8.0.20-1debian10_amd64.deb \
+ && rm -rf /var/lib/apt/lists/*
