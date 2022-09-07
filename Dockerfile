@@ -32,5 +32,8 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-ODBC/8.0/mysql-connector-
       ./libmysqlclient21_8.0.20-1debian10_amd64.deb \
  && rm -rf /var/lib/apt/lists/*
 
-ARG FINAL_USER=1005
-USER ${FINAL_USER}
+
+# Set/Reset the USER.
+
+ARG USER=1005
+USER ${USER}
