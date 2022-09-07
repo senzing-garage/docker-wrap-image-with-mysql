@@ -40,7 +40,7 @@ Wrap a Docker image with enablement for MySQL database
         docker build \
             --build-arg BASE_IMAGE=${BASE_IMAGE_NAME}:${!BASE_IMAGE_VERSION_VARIABLE} \
             --tag ${BASE_IMAGE_NAME}-mysql:${!BASE_IMAGE_VERSION_VARIABLE} \
-            https://github.com/Senzing/docker-wrap-image-with-mysql.git#issue-3.dockter.1
+            https://github.com/Senzing/docker-wrap-with-mysql.git#issue-3.dockter.1
 
     done
     ```
