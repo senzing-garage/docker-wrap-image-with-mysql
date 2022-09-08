@@ -28,10 +28,10 @@ Wrap a Docker image with enablement for MySQL database
       "senzing/redoer;${SENZING_DOCKER_IMAGE_VERSION_REDOER:-latest};1001" \
       "senzing/senzing-api-server;${SENZING_DOCKER_IMAGE_VERSION_SENZING_API_SERVER:-latest}" \
       "senzing/senzing-console;${SENZING_DOCKER_IMAGE_VERSION_SENZING_CONSOLE:-latest}" \
-      "senzing/senzing-poc-server:${SENZING_DOCKER_IMAGE_VERSION_SENZING_POC_SERVER:-latest}" \
-      "senzing/sshd:${SENZING_DOCKER_IMAGE_VERSION_SSHD:-latest}" \
+      "senzing/senzing-poc-server;${SENZING_DOCKER_IMAGE_VERSION_SENZING_POC_SERVER:-latest}" \
+      "senzing/sshd;${SENZING_DOCKER_IMAGE_VERSION_SSHD:-latest}" \
       "senzing/stream-loader;${SENZING_DOCKER_IMAGE_VERSION_STREAM_LOADER:-latest}" \
-      "senzing/xterm:${SENZING_DOCKER_IMAGE_VERSION_XTERM:-latest}" \
+      "senzing/xterm;${SENZING_DOCKER_IMAGE_VERSION_XTERM:-latest}" \
     )
     ```
 
