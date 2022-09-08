@@ -20,7 +20,9 @@ The following steps show how to wrap existing containers with MySQL prerequisite
 
 1. List the Docker images and their
    [corresponding environment variable name](https://github.com/Senzing/knowledge-base/blob/main/lists/docker-versions-stable.sh).
-   Format: `repository`;`tag`;`user` where `user` defaults to `1001`
+
+   Format: `repository`;`tag`;`user` where `user` defaults to `1001`.
+
    Example:
 
     ```console
