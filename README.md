@@ -11,7 +11,9 @@ to enable them to work with the MySQL database.
 By itself, the
 [Dockerfile](Dockerfile)
 is not useful.
-Rather, it can be used in the method described below to add files to an existing Docker image.
+Rather, it can be used in the method described below,
+[Create containers](#create-containers),
+to add files to an existing Docker image.
 
 ### Contents
 
