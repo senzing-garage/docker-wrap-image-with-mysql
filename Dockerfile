@@ -32,6 +32,7 @@ RUN wget https://dev.mysql.com/get/Downloads/Connector-ODBC/8.0/mysql-connector-
       ./libmysqlclient21_8.0.20-1debian10_amd64.deb \
  && rm -rf /var/lib/apt/lists/*
 
+ RUN rm /opt/senzing/g2/sdk/python/senzing_governor.py || true
 
 # Set/Reset the USER.
 
