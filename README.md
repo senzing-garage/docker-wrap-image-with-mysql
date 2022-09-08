@@ -20,7 +20,7 @@ Wrap a Docker image with enablement for MySQL database
 
 1. List the Docker images and their
    [corresponding environment variable name](https://github.com/Senzing/knowledge-base/blob/main/lists/docker-versions-stable.sh).
-   Format: `repository`.`tag`.`user` where user defaults to `1001`
+   Format: `repository`;`tag`;`user` where user defaults to `1001`
    Example:
 
     ```console
@@ -46,7 +46,7 @@ Wrap a Docker image with enablement for MySQL database
         BASE_IMAGE_VERSION="${BASE_IMAGE_DATA[1]}"
         BASE_IMAGE_USER="${BASE_IMAGE_DATA[2]}"
         docker pull ${BASE_IMAGE_NAME}:${BASE_IMAGE_VERSION}
-        docker build \
+        echo docker build \
             --build-arg BASE_IMAGE=${BASE_IMAGE_NAME}:${BASE_IMAGE_VERSION} \
             --build-arg USER=${BASE_IMAGE_USER:-1001} \
             --tag ${BASE_IMAGE_NAME}-mysql:${BASE_IMAGE_VERSION} \
