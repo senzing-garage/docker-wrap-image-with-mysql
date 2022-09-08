@@ -3,10 +3,9 @@ Wrap a Docker image with enablement for MySQL database
 
 
 
-## Create container
+## Create containers
 
-### XXX
-
+The following steps show how to wrap existing containers with MySQL prerequisites.
 
 1. Get versions of Docker images.
    Example:
