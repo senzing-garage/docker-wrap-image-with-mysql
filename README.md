@@ -115,7 +115,7 @@ The following steps show how to wrap existing containers with MySQL prerequisite
             --build-arg BASE_IMAGE=${BASE_IMAGE_NAME}:${BASE_IMAGE_VERSION} \
             --build-arg USER=${BASE_IMAGE_USER:-1001} \
             --tag ${BASE_IMAGE_NAME}-mysql:${BASE_IMAGE_VERSION} \
-            https://github.com/Senzing/docker-wrap-image-with-mysql.git#issue-3.dockter.1
+            https://github.com/Senzing/docker-wrap-image-with-mysql.git#main
 
     done
 
