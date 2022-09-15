@@ -91,6 +91,8 @@ The following steps show how to wrap existing containers with MySQL prerequisite
       "senzing/senzing-api-server;${SENZING_DOCKER_IMAGE_VERSION_SENZING_API_SERVER:-latest}" \
       "senzing/senzing-console;${SENZING_DOCKER_IMAGE_VERSION_SENZING_CONSOLE:-latest}" \
       "senzing/senzing-poc-server;${SENZING_DOCKER_IMAGE_VERSION_SENZING_POC_SERVER:-latest}" \
+      "senzing/senzingapi-runtime;${SENZING_DOCKER_IMAGE_VERSION_SENZINGAPI_RUNTIME:-latest}" \
+      "senzing/senzingapi-tools;${SENZING_DOCKER_IMAGE_VERSION_SENZINGAPI_TOOLS:-latest}" \
       "senzing/sshd;${SENZING_DOCKER_IMAGE_VERSION_SSHD:-latest};0" \
       "senzing/stream-loader;${SENZING_DOCKER_IMAGE_VERSION_STREAM_LOADER:-latest}" \
       "senzing/xterm;${SENZING_DOCKER_IMAGE_VERSION_XTERM:-latest}" \
@@ -113,7 +115,7 @@ The following steps show how to wrap existing containers with MySQL prerequisite
             --build-arg BASE_IMAGE=${BASE_IMAGE_NAME}:${BASE_IMAGE_VERSION} \
             --build-arg USER=${BASE_IMAGE_USER:-1001} \
             --tag ${BASE_IMAGE_NAME}-mysql:${BASE_IMAGE_VERSION} \
-            https://github.com/Senzing/docker-wrap-image-with-mysql.git#issue-3.dockter.1
+            https://github.com/Senzing/docker-wrap-image-with-mysql.git#main
 
     done
 
