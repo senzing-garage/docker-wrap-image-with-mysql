@@ -13,8 +13,7 @@ USER root
 
 RUN apt-get update \
  && apt-get -y install \
-      wget \
- && rm -rf /var/lib/apt/lists/*
+      wget
 
 # MySQL support
 
