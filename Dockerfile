@@ -1,7 +1,7 @@
-ARG BASE_IMAGE=debian:11.4-slim@sha256:68c1f6bae105595d2ebec1589d9d476ba2939fdb11eaba1daec4ea826635ce75
+ARG BASE_IMAGE=debian:11.6-slim@sha256:8eaee63a5ea83744e62d5bf88e7d472d7f19b5feda3bfc6a2304cc074f269269
 FROM ${BASE_IMAGE}
 
-ENV REFRESHED_AT=2022-09-08
+ENV REFRESHED_AT=2023-03-16
 
 LABEL Name="senzing/wrap-with-mysql" \
       Maintainer="support@senzing.com" \
