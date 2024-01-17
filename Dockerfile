@@ -11,9 +11,9 @@ USER root
 
 # Install packages via apt-get.
 
-RUN apt-get update \
- && apt-get -y install \
-      wget
+RUN chmod 777 /tmp \
+ && apt update \
+ && apt -y install wget
 
 # MySQL support
 
