@@ -11,9 +11,11 @@ USER root
 
 # Install packages via apt-get.
 
-RUN chmod 777 /tmp \
+RUN export STAT_TMP=$(stat --format=%a /tmp) \
+ && chmod 777 /tmp \
  && apt update \
- && apt -y install wget
+ && apt -y install wget \
+ && chmod ${STAT_TMP} /tmp
 
 # MySQL support
 
